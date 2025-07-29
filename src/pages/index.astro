@@ -1,0 +1,313 @@
+---
+import Carousel from "../components/Carousel.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import ServiceCard from "../components/ServiceCard.astro";
+import Layout from "../layouts/Layout.astro";
+import Preloader from "../components/Preloader.astro";
+---
+
+<Layout title="Oman Enterprises - Business Solutions & Staffing Services">
+  <Preloader />
+  <div id="site-content" class="opacity-0 transition-opacity duration-700">
+  </div>
+  <Header />
+  <Carousel />
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">
+              About Oman Enterprises
+            </h2>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Founded with a vision to empower businesses with innovative and
+              scalable solutions, Oman Enterprises has rapidly expanded into
+              multiple sectors including staffing, business consulting,
+              semiconductor imports, IT solutions, and corporate gifting.
+            </p>
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              From our humble beginnings as a local business solutions provider,
+              we have grown into a trusted name with a strong presence in Noida,
+              Kolkata, and future expansion plans across India.
+            </p>
+            <a
+              href="/about"
+              class="bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors inline-block"
+            >
+              Read More About Us
+            </a>
+          </div>
+          <div class="relative">
+            <div class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+              <h3 class="text-xl font-bold text-gray-900 mb-6">
+                Why Choose Us?
+              </h3>
+              <ul class="space-y-3">
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-primary mr-3 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700">Trusted & Experienced Team</span>
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-primary mr-3 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700"
+                    >Global Collaborations & Partnerships</span
+                  >
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-primary mr-3 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700"
+                    >Scalable & Customized Solutions</span
+                  >
+                </li>
+                <li class="flex items-center">
+                  <svg
+                    class="w-5 h-5 text-primary mr-3 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="text-gray-700"
+                    >Government Compliance Support</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Core Services</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Comprehensive business solutions designed to help your organization
+          grow, optimize operations, and achieve sustainable success.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ServiceCard
+          title="Staffing & Recruitment"
+          description="Expert talent acquisition and workforce solutions for IT, engineering, and business operations."
+          icon="👥"
+        />
+        <ServiceCard
+          title="Business Consulting"
+          description="Strategic guidance for compliance, registration, taxation, and business optimization."
+          icon="📊"
+        />
+        <ServiceCard
+          title="Semiconductor Imports"
+          description="Reliable supply chain solutions for electronic components and semiconductor products."
+          icon="🔧"
+        />
+        <ServiceCard
+          title="IT & Digital Marketing"
+          description="Comprehensive digital solutions including web development, SEO, and online marketing."
+          icon="💻"
+        />
+        <ServiceCard
+          title="E-commerce Solutions"
+          description="End-to-end e-commerce setup, management, and optimization for online businesses."
+          icon="🛒"
+        />
+        <ServiceCard
+          title="Corporate Gifting"
+          description="Custom branded merchandise, promotional products, and corporate gift solutions."
+          icon="🎁"
+        />
+        <ServiceCard
+          title="Clothing & Apparel"
+          description="School uniforms, custom t-shirts, and bulk fabric supply for institutions."
+          icon="👕"
+        />
+        <ServiceCard
+          title="Backpacks & Bags"
+          description="High-quality customized bags for corporate, educational, and promotional use."
+          icon="🎒"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Industries We Serve
+        </h2>
+        <p class="text-gray-600">
+          Delivering specialized solutions across diverse industry sectors
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <div
+          class="group text-center p-6 rounded-xl bg-white border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all duration-300"
+        >
+          <img
+            src="https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg?auto=compress&cs=tinysrgb&w=400"
+            alt="Manufacturing"
+            class="w-12 h-12 mx-auto mb-3 rounded-lg object-cover"
+          />
+          <h3 class="text-sm font-medium text-gray-900">Manufacturing</h3>
+        </div>
+        <div
+          class="group text-center p-6 rounded-xl bg-white border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all duration-300"
+        >
+          <img
+            src="https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=400"
+            alt="Technology"
+            class="w-12 h-12 mx-auto mb-3 rounded-lg object-cover"
+          />
+          <h3 class="text-sm font-medium text-gray-900">Technology</h3>
+        </div>
+        <div
+          class="group text-center p-6 rounded-xl bg-white border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all duration-300"
+        >
+          <img
+            src="https://images.pexels.com/photos/289737/pexels-photo-289737.jpeg?auto=compress&cs=tinysrgb&w=400"
+            alt="Education"
+            class="w-12 h-12 mx-auto mb-3 rounded-lg object-cover"
+          />
+          <h3 class="text-sm font-medium text-gray-900">Education</h3>
+        </div>
+        <div
+          class="group text-center p-6 rounded-xl bg-white border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all duration-300"
+        >
+          <img
+            src="https://images.pexels.com/photos/416405/pexels-photo-416405.jpeg?auto=compress&cs=tinysrgb&w=400"
+            alt="Corporate"
+            class="w-12 h-12 mx-auto mb-3 rounded-lg object-cover"
+          />
+          <h3 class="text-sm font-medium text-gray-900">Corporate</h3>
+        </div>
+        <div
+          class="group text-center p-6 rounded-xl bg-white border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all duration-300"
+        >
+          <img
+            src="https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=400"
+            alt="Retail"
+            class="w-12 h-12 mx-auto mb-3 rounded-lg object-cover"
+          />
+          <h3 class="text-sm font-medium text-gray-900">Retail</h3>
+        </div>
+        <div
+          class="group text-center p-6 rounded-xl bg-white border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all duration-300"
+        >
+          <img
+            src="https://images.pexels.com/photos/163100/circuit-circuit-board-resistor-computer-163100.jpeg?auto=compress&cs=tinysrgb&w=400"
+            alt="Electronics"
+            class="w-12 h-12 mx-auto mb-3 rounded-lg object-cover"
+          />
+          <h3 class="text-sm font-medium text-gray-900">Electronics</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          What Our Clients Say
+        </h2>
+        <p class="text-gray-600">
+          Trusted by businesses across India for our reliable and professional
+          services
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-all duration-300"
+        >
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+          </div>
+          <p class="text-gray-600 mb-4 italic leading-relaxed">
+            "Oman Enterprises helped us streamline our staffing process and find
+            qualified candidates quickly. Their professionalism and attention to
+            detail exceeded our expectations."
+          </p>
+          <div class="font-medium text-gray-900 text-sm">
+            — Tech Startup CEO
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-all duration-300"
+        >
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+          </div>
+          <p class="text-gray-600 mb-4 italic leading-relaxed">
+            "Outstanding corporate gifting solutions! They delivered
+            high-quality customized products on time and within budget for our
+            annual company event."
+          </p>
+          <div class="font-medium text-gray-900 text-sm">
+            — Manufacturing Director
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-xl p-6 border border-gray-200 hover:shadow-md transition-all duration-300"
+        >
+          <div class="flex items-center mb-4">
+            <div class="flex text-yellow-400 text-sm">⭐⭐⭐⭐⭐</div>
+          </div>
+          <p class="text-gray-600 mb-4 italic leading-relaxed">
+            "Their business consulting services were invaluable during our
+            expansion. Oman Enterprises guided us through compliance
+            requirements seamlessly."
+          </p>
+          <div class="font-medium text-gray-900 text-sm">
+            — Small Business Owner
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ContactForm />
+  <Footer />
+</Layout>

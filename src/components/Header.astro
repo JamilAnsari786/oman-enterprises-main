@@ -1,0 +1,68 @@
+---
+const currentPath = Astro.url.pathname;
+---
+<header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 z-50">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="flex items-center space-x-2">
+          <img src="/logo-removebg.png" alt="Oman Enterprises Logo" class="h-20 w-25" />
+          
+        </a>
+      </div>
+
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/" class={`nav-link ${currentPath === '/' ? 'active' : ''}`}>Home</a>
+        <a href="/about" class={`nav-link ${currentPath === '/about' ? 'active' : ''}`}>About Us</a>
+        <a href="/services" class={`nav-link ${currentPath === '/services' ? 'active' : ''}`}>Services</a>
+        <a href="/industries" class={`nav-link ${currentPath === '/industries' ? 'active' : ''}`}>Industries</a>
+        <a href="/career" class={`nav-link ${currentPath === '/career' ? 'active' : ''}`}>Career</a>
+        <a href="/contact" class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-dark transition-colors">
+          Contact Us
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="/" class="block px-3 py-2 nav-link">Home</a>
+        <a href="/about" class="block px-3 py-2 nav-link">About Us</a>
+        <a href="/services" class="block px-3 py-2 nav-link">Services</a>
+        <a href="/industries" class="block px-3 py-2 nav-link">Industries</a>
+        <a href="/career" class="block px-3 py-2 nav-link">Career</a>
+        <a href="/contact" class="block px-3 py-2 bg-primary text-white rounded-lg font-medium">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .nav-link {
+    @apply text-gray-600 font-medium hover:text-gray-900 transition-colors duration-200;
+  }
+
+  .nav-link.active {
+    @apply text-primary;
+  }
+</style>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if (mobileMenuBtn && mobileMenu) {
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>

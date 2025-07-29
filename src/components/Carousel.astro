@@ -1,0 +1,159 @@
+---
+const heroImages = [
+  {
+    image: "/img4.jpeg",
+    title: "Empowering Business. Driving Growth.",
+    subtitle: "Strategic services in staffing, digital, imports & beyond.",
+  },
+  {
+    image: "/img5.jpg",
+    title: "Your Partner in Global Sourcing",
+    subtitle: "From concept to execution, we’re with you every step.",
+  },
+  {
+    image: "/img6.jpg",
+    title: "Innovate. Scale. Succeed.",
+    subtitle: "Tailored business solutions for the modern era.",
+  },
+];
+---
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<section class="hero">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      {heroImages.map((slide) => (
+        <div class="swiper-slide" style={`background-image: url('${slide.image}')`}>
+          <div class="overlay">
+            <div class="hero-text">
+              <h1 class="hero-title">{slide.title}</h1>
+              <p class="hero-subtitle">{slide.subtitle}</p>
+              <a href="/contact" class="btn-primary">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script type="module" src="/scripts/init-swiper.js" defer></script>
+
+<style>
+  .hero {
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+  }
+
+  .swiper,
+  .swiper-slide {
+    height: 100%;
+  }
+
+  .swiper-slide {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .hero-text {
+    text-align: center;
+    color: white;
+    max-width: 1150px;
+    padding: 2rem;
+    animation: fadeIn 1s ease-in forwards;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #ffffff, #dbeafe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeInUp 1s ease-in-out;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    color: #f1f5f9;
+    opacity: 0.9;
+    animation: fadeInUp 1.8s ease-in-out;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    animation: fadeInUp 2.4s ease-in-out;
+  }
+
+  .btn-primary:hover {
+    background-color: #1e40af;
+    transform: scale(1.05);
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-title {
+      font-size: 3.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.5rem;
+    }
+
+    .btn-primary {
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+    }
+  }
+</style>

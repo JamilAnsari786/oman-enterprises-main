@@ -1,0 +1,76 @@
+---
+export interface Props {
+  id: string;
+  lat: number;
+  lng: number;
+  title: string;
+  address: string;
+}
+
+const { id, lat, lng, title, address } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl p-6 shadow-xl border border-border">
+  <h3 class="text-xl font-bold text-secondary mb-4">{title}</h3>
+  <div id={id} class="h-64 rounded-xl mb-4 overflow-hidden shadow-lg"></div>
+  <p class="text-muted mb-4">{address}</p>
+  <a href={`https://maps.google.com/?q=${lat},${lng}`} 
+     target="_blank"
+     class="bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-dark hover:scale-105 transition-all duration-300 shadow-lg inline-block">
+    Get Directions
+  </a>
+</div>
+
+<script define:vars={{ id, lat, lng, title, address }}>
+  document.addEventListener('DOMContentLoaded', function() {
+    if (typeof L !== 'undefined') {
+      // Initialize the map
+      const map = L.map(id).setView([lat, lng], 13);
+      
+      // Add tile layer with modern style
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+      }).addTo(map);
+      
+      // Custom marker icon
+      const customIcon = L.divIcon({
+        html: `
+          <div class="bg-primary text-white p-2 rounded-full shadow-lg">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        `,
+        className: 'custom-marker',
+        iconSize: [40, 40],
+        iconAnchor: [20, 40]
+      });
+      
+      // Add marker
+      L.marker([lat, lng], { icon: customIcon })
+        .addTo(map)
+        .bindPopup(`
+          <div class="p-2">
+            <h4 class="font-bold text-secondary">${title}</h4>
+            <p class="text-sm text-muted">${address}</p>
+          </div>
+        `);
+    }
+  });
+</script>
+
+<style>
+  :global(.custom-marker) {
+    background: none !important;
+    border: none !important;
+  }
+  
+  :global(.leaflet-popup-content-wrapper) {
+    border-radius: 12px !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  :global(.leaflet-popup-tip) {
+    background: white !important;
+  }
+</style>

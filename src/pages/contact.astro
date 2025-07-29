@@ -1,0 +1,308 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MapComponent from '../components/MapComponent.astro';
+
+---
+
+<Layout title="Contact Us - Oman Enterprises" description="Get in touch with Oman Enterprises. Offices in Kolkata and Noida. Contact us for business solutions, staffing services, and corporate gifting.">
+  <Header />
+  
+
+  <section class="bg-gradient-to-r from-primary to-blue-600 text-white py-20 mt-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+        <p class="text-xl text-blue-100">
+          Ready to transform your business? Get in touch with our team today
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Contact Form -->
+          <div>
+            <h2 class="text-3xl font-bold text-secondary mb-6">Send Us a Message</h2>
+            <form id="contact-main-form" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label for="firstName" class="block text-sm font-medium text-secondary mb-2">First Name *</label>
+                  <input type="text" id="firstName" name="firstName" required 
+                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+                <div>
+                  <label for="lastName" class="block text-sm font-medium text-secondary mb-2">Last Name *</label>
+                  <input type="text" id="lastName" name="lastName" required
+                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                </div>
+              </div>
+              
+              <div>
+                <label for="email" class="block text-sm font-medium text-secondary mb-2">Email Address *</label>
+                <input type="email" id="email" name="email" required
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+              
+              <div>
+                <label for="phone" class="block text-sm font-medium text-secondary mb-2">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+              
+              <div>
+                <label for="company" class="block text-sm font-medium text-secondary mb-2">Company Name</label>
+                <input type="text" id="company" name="company"
+                       class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+              </div>
+              
+              <div>
+                <label for="service" class="block text-sm font-medium text-secondary mb-2">Service Interest *</label>
+                <select id="service" name="service" required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                  <option value="">Select a service...</option>
+                  <option value="staffing">Staffing & Recruitment Solutions</option>
+                  <option value="consulting">Business Consulting & Compliance</option>
+                  <option value="semiconductor">Semiconductor Imports & Supply Chain</option>
+                  <option value="it-services">IT & Digital Marketing Services</option>
+                  <option value="ecommerce">E-commerce & Wholesale Supply</option>
+                  <option value="corporate-gifting">Corporate Gifting & Custom Merchandise</option>
+                  <option value="apparel">Clothing & Apparel Trading</option>
+                  <option value="backpacks">Backpacks & Bag Customization</option>
+                  <option value="other">Other / General Inquiry</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="budget" class="block text-sm font-medium text-secondary mb-2">Project Budget</label>
+                <select id="budget" name="budget"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                  <option value="">Select budget range...</option>
+                  <option value="under-50k">Under ₹50,000</option>
+                  <option value="50k-2lakh">₹50,000 - ₹2,00,000</option>
+                  <option value="2lakh-5lakh">₹2,00,000 - ₹5,00,000</option>
+                  <option value="5lakh-10lakh">₹5,00,000 - ₹10,00,000</option>
+                  <option value="above-10lakh">Above ₹10,00,000</option>
+                </select>
+              </div>
+              
+              <div>
+                <label for="message" class="block text-sm font-medium text-secondary mb-2">Message *</label>
+                <textarea id="message" name="message" rows="5" required
+                          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                          placeholder="Tell us about your project requirements, timeline, and any specific needs..."></textarea>
+              </div>
+              
+              <div class="flex items-start">
+                <input type="checkbox" id="privacy" name="privacy" required
+                       class="mt-1 h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+                <label for="privacy" class="ml-3 text-sm text-gray-600">
+                  I agree to the <a href="#" class="text-primary hover:underline">Privacy Policy</a> and 
+                  consent to being contacted regarding my inquiry. *
+                </label>
+              </div>
+              
+              <button type="submit" 
+                      class="w-full bg-primary text-white py-4 px-8 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                Send Message
+              </button>
+            </form>
+          </div>
+          
+
+          <div>
+            <h2 class="text-3xl font-bold text-secondary mb-6">Get In Touch</h2>
+            <p class="text-gray-600 mb-8">
+              We're here to help you grow your business. Reach out to our team for personalized 
+              solutions and expert guidance.
+            </p>
+            
+
+            <div class="space-y-8">
+
+              <div class="bg-accent p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-secondary mb-4 flex items-center">
+                  <span class="text-2xl mr-3">🏢</span>
+                  Kolkata Office
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex items-start">
+                    <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div>
+                      <p class="font-medium">Head Office</p>
+                      <p class="text-gray-600">Kolkata, West Bengal, India</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    <a href="tel:+91XXXXXXXXXX" class="text-primary hover:underline">+91 XXXX-XXX-XXX</a>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                    <a href="mailto:kolkata@omanenterprises.in" class="text-primary hover:underline">kolkata@omanenterprises.in</a>
+                  </div>
+                </div>
+              </div>
+              
+
+              <div class="bg-accent p-6 rounded-lg">
+                <h3 class="text-xl font-bold text-secondary mb-4 flex items-center">
+                  <span class="text-2xl mr-3">🏢</span>
+                  Noida Office
+                </h3>
+                <div class="space-y-3">
+                  <div class="flex items-start">
+                    <svg class="w-5 h-5 text-primary mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                    </svg>
+                    <div>
+                      <p class="font-medium">Regional Office</p>
+                      <p class="text-gray-600">Noida, Uttar Pradesh, India</p>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                    </svg>
+                    <a href="tel:+91XXXXXXXXXX" class="text-primary hover:underline">+91 XXXX-XXX-XXX</a>
+                  </div>
+                  <div class="flex items-center">
+                    <svg class="w-5 h-5 text-primary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                      <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                    </svg>
+                    <a href="mailto:noida@omanenterprises.in" class="text-primary hover:underline">noida@omanenterprises.in</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="mt-8 bg-white border border-gray-200 p-6 rounded-lg">
+              <h3 class="text-xl font-bold text-secondary mb-4">Business Hours</h3>
+              <div class="space-y-2">
+                <div class="flex justify-between">
+                  <span class="font-medium">Monday - Friday</span>
+                  <span class="text-gray-600">9:00 AM - 6:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-medium">Saturday</span>
+                  <span class="text-gray-600">9:00 AM - 2:00 PM</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="font-medium">Sunday</span>
+                  <span class="text-gray-600">Closed</span>
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="mt-8">
+              <h3 class="text-xl font-bold text-secondary mb-4">Quick Contact</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <a href="tel:+91XXXXXXXXXX" 
+                   class="bg-primary text-white p-4 rounded-lg text-center hover:bg-blue-600 transition-colors">
+                  <svg class="w-6 h-6 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                  </svg>
+                  Call Now
+                </a>
+                <a href="mailto:info@omanenterprises.in" 
+                   class="bg-secondary text-white p-4 rounded-lg text-center hover:bg-gray-700 transition-colors">
+                  <svg class="w-6 h-6 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                  </svg>
+                  Email Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Map Section (Placeholder) -->
+  <section class="py-20 bg-gradient-to-b from-accent to-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-secondary mb-12 text-center">Find Us</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Kolkata Map -->
+          <MapComponent 
+            id="kolkata-map"
+            lat={22.5726}
+            lng={88.3639}
+            title="Kolkata Office Location"
+            address="Kolkata, West Bengal, India"
+          />
+          
+          <!-- Noida Map -->
+          <MapComponent 
+            id="noida-map"
+            lat={28.5355}
+            lng={77.3910}
+            title="Noida Office Location"
+            address="Noida, Uttar Pradesh, India"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer />
+</Layout>
+<script type="module">
+  const form = document.getElementById("contact-main-form");
+
+  form?.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    // Combine first + last name for Firebase
+    data.name = `${data.firstName} ${data.lastName}`;
+    delete data.firstName;
+    delete data.lastName;
+
+    // Optional fields fallback
+    data.phone = data.phone || null;
+    data.company = data.company || null;
+    data.service = data.service || null;
+    data.budget = data.budget || null;
+
+    try {
+      const res = await fetch("/api/maincontact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        alert("Thank you for contacting us. We'll reach out soon!");
+        form.reset();
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      alert("Something went wrong. Try again.");
+    }
+  });
+</script>

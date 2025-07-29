@@ -1,0 +1,152 @@
+---
+// pages/opportunities.astro
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Our Leadership Team - Oman Enterprises" description="Meet the leaders driving Oman Enterprises forward.">
+  <Header />
+
+  <!-- Banner -->
+<section class="bg-gradient-to-r from-primary to-blue-600 text-white py-20 mt-20">
+  <div class="container mx-auto px-6 md:px-12 text-center">
+    <h2 class="text-4xl font-bold mb-4">Our Leadership Team</h2>
+    <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+      Meet the visionaries behind Oman Enterprises' success. Our leadership team brings deep industry knowledge and a commitment to excellence that drives our growth and innovation every day.
+    </p>
+  </div>
+</section>
+
+
+  <!-- Leaders Section -->
+  <section class="py-20 bg-gray-50">
+    <div class="container mx-auto px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Leader Cards -->
+        {[
+          {
+            name: "Founder & CEO",
+            role: "Strategic Leadership",
+            image: "https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg",
+            desc: "Visionary leader with experience in business development and international partnerships.",
+            skills: ["Strategic Thinking", "Business Development", "Global Partnerships"]
+          },
+          {
+            name: "Operations Head",
+            role: "Process Excellence",
+            image: "https://images.pexels.com/photos/17582358/pexels-photo-17582358.jpeg",
+            desc: "Expert in operational efficiency and team management with a focus on quality delivery.",
+            skills: ["Process Optimization", "Team Leadership", "Performance Management"]
+          },
+          {
+            name: "Technology Director",
+            role: "Digital Innovation",
+            image: "https://images.pexels.com/photos/15399144/pexels-photo-15399144.jpeg",
+            desc: "Leading digital transformation initiatives and IT solutions development.",
+            skills: ["Cloud Solutions", "Software Architecture", "Innovation Strategy"]
+          },
+          {
+            name: "Chief Financial Officer",
+            role: "Financial Planning",
+            image: "https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg",
+            desc: "Expert in budgeting, forecasting, and financial risk management.",
+            skills: ["Budgeting", "Auditing", "Forecast Analysis"]
+          },
+          {
+            name: "Head of Human Resources",
+            role: "People & Culture",
+            image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg",
+            desc: "Drives talent management, employee engagement, and organizational development.",
+            skills: ["HR Policies", "Employee Engagement", "Talent Acquisition"]
+          },
+          {
+            name: "Legal Advisor",
+            role: "Corporate Compliance",
+            image: "https://images.pexels.com/photos/936117/pexels-photo-936117.jpeg",
+            desc: "Ensures the company adheres to all legal and regulatory requirements.",
+            skills: ["Legal Compliance", "Contracts", "Corporate Law"]
+          },
+          {
+            name: "Marketing Head",
+            role: "Brand Strategy",
+            image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
+            desc: "Crafts brand vision and marketing campaigns to enhance visibility.",
+            skills: ["Market Analysis", "Digital Marketing", "Brand Management"]
+          },
+          {
+            name: "Sales Director",
+            role: "Revenue Growth",
+            image: "https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg",
+            desc: "Focused on driving revenue and building strong client relationships.",
+            skills: ["Lead Generation", "Negotiation", "Client Acquisition"]
+          },
+          {
+            name: "Head of Research",
+            role: "Innovation Strategy",
+            image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+            desc: "Leads R&D efforts to drive innovative solutions and new technologies.",
+            skills: ["R&D Management", "Product Innovation", "Industry Trends"]
+          },
+          {
+            name: "Head of Quality Assurance",
+            role: "Product Excellence",
+            image: "https://images.pexels.com/photos/3779421/pexels-photo-3779421.jpeg",
+            desc: "Maintains high product standards through robust QA processes.",
+            skills: ["QA Testing", "Standards Compliance", "Process Control"]
+          },
+          {
+            name: "IT Infrastructure Manager",
+            role: "System Stability",
+            image: "https://images.pexels.com/photos/756231/pexels-photo-756231.jpeg",
+            desc: "Oversees company networks, servers, and security protocols.",
+            skills: ["Network Security", "Server Management", "IT Operations"]
+          },
+          {
+            name: "Client Success Manager",
+            role: "Customer Experience",
+            image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg",
+            desc: "Ensures client satisfaction and long-term business relationships.",
+            skills: ["Client Retention", "Customer Support", "Feedback Management"]
+          },
+          {
+            name: "Head of Procurement",
+            role: "Supply Chain Management",
+            image: "https://images.pexels.com/photos/462680/pexels-photo-462680.jpeg",
+            desc: "Handles vendor relations and procurement processes.",
+            skills: ["Vendor Management", "Inventory Control", "Cost Negotiation"]
+          },
+          {
+            name: "CSR & Sustainability Lead",
+            role: "Sustainable Development",
+            image: "https://images.pexels.com/photos/1181696/pexels-photo-1181696.jpeg",
+            desc: "Leads initiatives related to environment and social responsibility.",
+            skills: ["CSR Strategy", "Sustainability", "Community Engagement"]
+          },
+          {
+            name: "Training & Development Head",
+            role: "Employee Growth",
+            image: "https://images.pexels.com/photos/2378998/pexels-photo-2378998.jpeg",
+            desc: "Designs learning programs to upskill the workforce.",
+            skills: ["Learning Strategy", "Employee Development", "Workshops"]
+          }
+        ].map((leader, index) => (
+          <div class="bg-white rounded-xl shadow-lg p-6 text-center" >
+            <img src={leader.image} alt={leader.name} class="w-32 h-32 mx-auto rounded-full mb-4 object-cover shadow" />
+            <h2 class="text-xl font-semibold">{leader.name}</h2>
+            <p class="text-sm text-gray-600 mb-2">{leader.role}</p>
+            <p class="text-sm text-gray-700">{leader.desc}</p>
+            <div class="mt-4">
+              <h4 class="font-medium mb-1 text-gray-800">Skills:</h4>
+              <ul class="text-sm text-gray-600 space-y-1">
+                {leader.skills.map(skill => <li>• {skill}</li>)}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

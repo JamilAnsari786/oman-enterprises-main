@@ -1,0 +1,170 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+import ChatBotWidget from '../components/ChatBotWidget.jsx';
+
+const {
+  title,
+  description = 'Oman Enterprises - Business Solutions, Staffing Services, Semiconductor Imports & Corporate Gifting'
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- External Styles -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Oman Enterprises",
+      "url": "https://omanenterprises.in",
+      "description": "Leading business service provider offering staffing solutions, business consulting, semiconductor imports, IT services, and corporate gifting across India.",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Kolkata",
+          "addressRegion": "West Bengal",
+          "addressCountry": "India"
+        },
+        {
+          "@type": "PostalAddress",
+          "addressLocality": "Noida",
+          "addressRegion": "Uttar Pradesh",
+          "addressCountry": "India"
+        }
+      ]
+    }
+    </script>
+  </head>
+
+  <body class="font-sans bg-white text-gray-900 antialiased">
+    <slot />
+
+    <!-- Chatbot widget injected globally -->
+    <ChatBotWidget client:load />
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary-color: #1877F2;
+    --secondary-color: #FFFFFF;
+    --text-color: #333333;
+    --light-grey: #F8F9FA;
+    --border-color: #E1E5E9;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background-color: #0F5DBD;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 12px 24px;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
+  .section-padding {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+
+  .section-subtitle {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem;
+    }
+    .section-padding {
+      padding: 60px 0;
+    }
+  }
+</style>

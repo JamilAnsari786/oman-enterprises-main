@@ -1,0 +1,314 @@
+---
+// Removed Supabase imports
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout
+  title="Careers - Oman Enterprises"
+  description="Explore job and internship opportunities at Oman Enterprises. Join a modern, dynamic, and growing team."
+>
+  <Header />
+
+  <!-- Hero Section -->
+  <section
+    class="bg-gradient-to-r from-primary to-blue-600 text-white py-20 mt-20 text-center"
+  >
+    <div class="container mx-auto px-6">
+      <h1 class="text-5xl font-bold mb-4">
+        Grow Your Career at Oman Enterprises
+      </h1>
+      <p class="text-lg max-w-3xl mx-auto">
+        Discover full-time jobs and internships where innovation meets impact.
+        Join us in building the future of staffing and enterprise solutions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tabs Section -->
+  <section class="py-16 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <div class="flex justify-center mb-8">
+        <button id="jobsTab" class="tab-button active-tab">Jobs</button>
+        <button id="internshipTab" class="tab-button ml-4">Internships</button>
+      </div>
+
+      <!-- Job Listings -->
+      <div
+        id="jobsSection"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
+        <!-- Job Cards -->
+        <div class="job-card">
+          <h3 class="text-xl font-semibold">Business Development Executive</h3>
+          <p class="text-gray-600">Location: Kolkata / Noida</p>
+          <p class="mt-2 text-sm">
+            Drive client acquisition and partnerships in a fast-paced
+            environment.
+          </p>
+          <a
+            href="#"
+            class="apply-btn"
+            onclick="openForm('Business Development Executive')">Apply Now</a
+          >
+        </div>
+        <div class="job-card">
+          <h3 class="text-xl font-semibold">Client Relationship Officer</h3>
+          <p class="text-gray-600">Location: Hyderabad</p>
+          <p class="mt-2 text-sm">
+            Maintain and grow key client accounts through regular engagement.
+          </p>
+          <a
+            href="#"
+            class="apply-btn"
+            onclick="openForm('Client Relationship Officer')">Apply Now</a
+          >
+        </div>
+        <div class="job-card">
+          <h3 class="text-xl font-semibold">Sales Executive</h3>
+          <p class="text-gray-600">Location: Mumbai</p>
+          <p class="mt-2 text-sm">
+            Execute B2B sales strategies and close high-value business deals.
+          </p>
+          <a href="#" class="apply-btn" onclick="openForm('Sales Executive')"
+            >Apply Now</a
+          >
+        </div>
+        <div class="job-card">
+          <h3 class="text-xl font-semibold">Technical Project Manager</h3>
+          <p class="text-gray-600">Location: Noida</p>
+          <p class="mt-2 text-sm">
+            Lead cross-functional teams to deliver enterprise-grade IT projects.
+          </p>
+          <a
+            href="#"
+            class="apply-btn"
+            onclick="openForm('Technical Project Manager')">Apply Now</a
+          >
+        </div>
+        <div class="job-card">
+          <h3 class="text-xl font-semibold">HR Manager</h3>
+          <p class="text-gray-600">Location: Remote</p>
+          <p class="mt-2 text-sm">
+            Manage hiring pipelines and employee engagement initiatives.
+          </p>
+          <a href="#" class="apply-btn" onclick="openForm('HR Manager')"
+            >Apply Now</a
+          >
+        </div>
+      </div>
+
+      <!-- Internship Listings -->
+      <div
+        id="internshipSection"
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden"
+      >
+        <!-- Internship Cards -->
+        <div class="job-card">
+          <h3 class="text-xl font-semibold">Marketing Intern</h3>
+          <p class="text-gray-600">Location: Hybrid</p>
+          <p class="mt-2 text-sm">
+            Work with the digital team to grow brand awareness and engagement.
+          </p>
+          <a href="#" class="apply-btn" onclick="openForm('Marketing Intern')"
+            >Apply Now</a
+          >
+        </div>
+        <div class="job-card">
+          <h3 class="text-xl font-semibold">Software Developer Intern</h3>
+          <p class="text-gray-600">Location: Noida</p>
+          <p class="mt-2 text-sm">
+            Assist in building internal tools and enterprise platforms.
+          </p>
+          <a
+            href="#"
+            class="apply-btn"
+            onclick="openForm('Software Developer Intern')">Apply Now</a
+          >
+        </div>
+        <div class="job-card">
+          <h3 class="text-xl font-semibold">Content Writing Intern</h3>
+          <p class="text-gray-600">Location: Remote</p>
+          <p class="mt-2 text-sm">
+            Create SEO-rich content for blogs, case studies, and product pages.
+          </p>
+          <a
+            href="#"
+            class="apply-btn"
+            onclick="openForm('Content Writing Intern')">Apply Now</a
+          >
+        </div>
+        <div class="job-card">
+          <h3 class="text-xl font-semibold">UI/UX Design Intern</h3>
+          <p class="text-gray-600">Location: Kolkata</p>
+          <p class="mt-2 text-sm">
+            Support the design team in building user-friendly interfaces.
+          </p>
+          <a
+            href="#"
+            class="apply-btn"
+            onclick="openForm('UI/UX Design Intern')">Apply Now</a
+          >
+        </div>
+        <div class="job-card">
+          <h3 class="text-xl font-semibold">Business Analyst Intern</h3>
+          <p class="text-gray-600">Location: Noida</p>
+          <p class="mt-2 text-sm">
+            Analyze business requirements and help optimize workflows.
+          </p>
+          <a
+            href="#"
+            class="apply-btn"
+            onclick="openForm('Business Analyst Intern')">Apply Now</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Application Form -->
+  <div
+    id="applicationModal"
+    class="fixed inset-0 bg-blue-900 bg-opacity-80 flex justify-center items-center z-50 hidden"
+  >
+    <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-lg relative">
+      <h2 class="text-2xl font-bold mb-4" id="modalTitle">Apply</h2>
+      <form id="applicationForm">
+        <input type="hidden" name="jobTitle" id="jobTitleField" />
+        <label class="block font-medium">Full Name</label>
+        <input type="text" name="name" required class="input-field" />
+        <label class="block mt-3 font-medium">Email</label>
+        <input type="email" name="email" required class="input-field" />
+        <label class="block mt-3 font-medium">Resume Link</label>
+        <input type="url" name="resume" required class="input-field" />
+        <label class="block mt-3 font-medium">Why should we hire you?</label>
+        <textarea name="reason" required class="input-field" rows="4"
+        ></textarea>
+        <div class="flex justify-between mt-4">
+          <button
+            type="button"
+            class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+            onclick="closeModal()">Cancel</button
+          >
+          <button
+            type="submit"
+            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >Submit</button
+          >
+        </div>
+        <p id="formMsg" class="text-green-600 mt-3 hidden text-sm font-medium">
+          Application submitted!
+        </p>
+      </form>
+    </div>
+  </div>
+  <Footer />
+</Layout>
+
+<!-- Scripts -->
+<script type="module">
+  const jobsTab = document.getElementById("jobsTab");
+  const internshipTab = document.getElementById("internshipTab");
+  const jobsSection = document.getElementById("jobsSection");
+  const internshipSection = document.getElementById("internshipSection");
+
+  jobsTab.addEventListener("click", () => {
+    jobsTab.classList.add("active-tab");
+    internshipTab.classList.remove("active-tab");
+    jobsSection.classList.remove("hidden");
+    internshipSection.classList.add("hidden");
+  });
+
+  internshipTab.addEventListener("click", () => {
+    internshipTab.classList.add("active-tab");
+    jobsTab.classList.remove("active-tab");
+    internshipSection.classList.remove("hidden");
+    jobsSection.classList.add("hidden");
+  });
+
+  window.openForm = function (title) {
+    document.getElementById("applicationModal").classList.remove("hidden");
+    document.getElementById("modalTitle").innerText = `Apply for: ${title}`;
+    document.getElementById("jobTitleField").value = title;
+  };
+
+  window.closeModal = function () {
+    document.getElementById("applicationModal").classList.add("hidden");
+  };
+  document
+    .getElementById("applicationForm")
+    .addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const msg = document.getElementById("formMsg");
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch("/api/job-internship", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        const result = await res.json();
+
+        if (result.success) {
+          msg.classList.remove("hidden");
+          form.reset();
+          setTimeout(() => {
+            closeModal();
+            msg.classList.add("hidden");
+          }, 1500);
+        } else {
+          alert("Failed to submit application: " + result.error);
+        }
+      } catch (err) {
+        console.error("Submission Error:", err);
+        alert("Something went wrong while submitting your application.");
+      }
+    });
+</script>
+
+<style>
+  .tab-button {
+    padding: 0.75rem 1.5rem;
+    background-color: #e2e8f0;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  .active-tab {
+    background-color: #3b82f6;
+    color: white;
+  }
+  .job-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  }
+  .apply-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+  .apply-btn:hover {
+    background-color: #1d4ed8;
+  }
+  .input-field {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.375rem;
+    margin-top: 0.25rem;
+  }
+</style>
